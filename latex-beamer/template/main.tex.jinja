@@ -1,0 +1,39 @@
+\documentclass[aspectratio={{ aspect_ratio }}]{beamer}
+\usetheme{ {{- theme -}} }
+
+\usepackage[T1]{fontenc}
+\usepackage[{{ language }}]{babel}
+\usepackage{graphicx}
+{% raw %}\graphicspath{{figures/}}{% endraw %}
+\usepackage{booktabs}
+
+\title{ {{- title -}} }
+{%- if subtitle %}
+\subtitle{ {{- subtitle -}} }
+{%- endif %}
+\author{ {{- author_name -}} }
+\institute{ {{- affiliation -}} }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{ {%- if language == 'spanish' %}Contenido{% else %}Outline{% endif -%} }
+  \tableofcontents
+\end{frame}
+
+\section{ {%- if language == 'spanish' %}Motivación{% else %}Motivation{% endif -%} }
+
+\begin{frame}{ {%- if language == 'spanish' %}Problema{% else %}Problem{% endif -%} }
+  \begin{itemize}
+    \item {% if language == 'spanish' %}Primer punto{% else %}First point{% endif %}
+    \item {% if language == 'spanish' %}Segundo punto{% else %}Second point{% endif %}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[standout]
+  {% if language == 'spanish' %}¡Gracias!{% else %}Thank you!{% endif %}
+\end{frame}
+
+\end{document}

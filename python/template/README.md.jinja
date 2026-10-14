@@ -1,0 +1,40 @@
+# {{ project_name }}
+
+{{ description or "<!-- Describe en una o dos frases qué hace este proyecto. -->" }}
+
+## Instalación
+
+Requiere [uv](https://docs.astral.sh/uv/).
+
+```bash
+make install     # uv sync
+```
+
+## Uso
+
+```bash
+make run         # uv run python -m {{ package_name }}
+make test        # pytest
+make lint        # ruff
+```
+{% if project_type == 'research' %}
+## Estructura
+
+```text
+data/raw/          # datos originales (no se versionan; ver data/README.md)
+data/processed/    # datos derivados, regenerables
+notebooks/         # exploración
+src/{{ package_name }}/   # código reutilizable
+results/           # figuras y tablas generadas (no se versionan)
+```
+
+## Reproducir los resultados
+
+```bash
+make install
+make run
+```
+{% endif %}
+## Licencia
+
+{% if license == 'MIT' %}[MIT](LICENSE) © {{ year }} {{ author_name }}{% else %}Sin licencia definida.{% endif %}

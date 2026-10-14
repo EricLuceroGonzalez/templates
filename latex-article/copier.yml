@@ -1,0 +1,26 @@
+# Plantilla: artículo o informe en LaTeX
+# Uso: uvx copier copy ~/Developer/tools/templates/latex-article <destino>
+_subdirectory: template
+_templates_suffix: .jinja
+
+project_name:
+  type: str
+  help: Nombre de la carpeta/repo (kebab-case, p. ej. paper-alns-2026)
+title:
+  type: str
+  help: Título del documento
+author_name:
+  type: str
+  help: Autor
+  default: Eric Lucero González
+affiliation:
+  type: str
+  help: Afiliación
+  default: Universidad Politécnica de Madrid
+language:
+  type: str
+  help: Idioma
+  choices:
+    Español: spanish
+    Inglés: english
+  default: spanish

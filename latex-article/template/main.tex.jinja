@@ -1,0 +1,44 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Idioma y codificación
+\usepackage[T1]{fontenc}
+\usepackage[{{ language }}{% if language == 'spanish' %},es-tabla{% endif %}]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% --- Página
+\usepackage[margin=2.5cm]{geometry}
+
+% --- Matemáticas, figuras y tablas
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+{% raw %}\graphicspath{{figures/}}{% endraw %}
+\usepackage{booktabs}
+\usepackage[ruled,vlined]{algorithm2e}
+
+% --- Bibliografía (biber)
+\usepackage[backend=biber, style=authoryear, maxbibnames=99]{biblatex}
+\addbibresource{refs.bib}
+
+% --- Enlaces (cargar casi al final)
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise, noabbrev]{cleveref}
+
+\title{ {{- title -}} }
+\author{ {{- author_name -}} \\ \small {{ affiliation }}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+{% if language == 'spanish' %}Resumen del trabajo en un párrafo.{% else %}One-paragraph summary of the work.{% endif %}
+\end{abstract}
+
+\section{ {%- if language == 'spanish' %}Introducción{% else %}Introduction{% endif -%} }
+\label{sec:intro}
+
+{% if language == 'spanish' %}Texto de ejemplo con una cita~\parencite{ejemplo2026}.{% else %}Example text with a citation~\parencite{ejemplo2026}.{% endif %}
+
+\printbibliography
+\end{document}

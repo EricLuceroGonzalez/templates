@@ -1,0 +1,42 @@
+# Plantilla: presentación Beamer
+# Uso: uvx copier copy ~/Developer/tools/templates/latex-beamer <destino>
+_subdirectory: template
+_templates_suffix: .jinja
+
+project_name:
+  type: str
+  help: Nombre de la carpeta (p. ej. 2026-11-seminario-alns)
+title:
+  type: str
+  help: Título de la presentación
+subtitle:
+  type: str
+  help: Subtítulo o evento (opcional)
+  default: ""
+author_name:
+  type: str
+  help: Autor
+  default: Eric Lucero González
+affiliation:
+  type: str
+  help: Afiliación
+  default: Universidad Politécnica de Madrid
+theme:
+  type: str
+  help: Tema de Beamer
+  choices: [metropolis, Madrid, default]
+  default: metropolis
+language:
+  type: str
+  help: Idioma
+  choices:
+    Español: spanish
+    Inglés: english
+  default: spanish
+aspect_ratio:
+  type: str
+  help: Formato
+  choices:
+    "16:9": "169"
+    "4:3": "43"
+  default: "169"
